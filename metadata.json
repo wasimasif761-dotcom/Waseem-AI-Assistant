@@ -1,0 +1,6 @@
+{
+  "name": "Waseem AI Assistant",
+  "description": "Offline AI phone agent powered by on-device LLM, Shizuku, and Accessibility Service to control device settings and automate UI tasks.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

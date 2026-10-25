@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Waseem AI</string>
+    <string name="app_full_name">Waseem AI Assistant</string>
+    <string name="developer_name">Waseem Asif</string>
+    <string name="accessibility_service_description">Enables Waseem AI Assistant to interact with on-screen elements (clicks, typing, navigation) based on voice or text instructions.</string>
+    <string name="accessibility_service_label">Waseem AI Screen Controller</string>
+    <string name="floating_service_notification_title">Waseem AI Active</string>
+    <string name="floating_service_notification_desc">Floating overlay is running and ready for voice or text commands.</string>
+</resources>
