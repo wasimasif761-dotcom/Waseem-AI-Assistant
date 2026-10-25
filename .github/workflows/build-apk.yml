@@ -23,10 +23,13 @@ jobs:
           distribution: 'temurin'
           cache: gradle
 
-      - name: Prepare Environment
+      - name: Prepare Environment & Keystore
         run: |
           touch .env
           chmod +x gradlew
+          if [ ! -f "debug.keystore" ]; then
+            keytool -genkeypair -v -keystore debug.keystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Android Debug,O=Android,C=US"
+          fi
 
       - name: Build Debug APK
         run: ./gradlew assembleDebug --no-daemon --stacktrace -Djava.awt.headless=true

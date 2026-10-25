@@ -41,16 +41,19 @@ android {
       isCrunchPngs = false
       isMinifyEnabled = false
       proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-      // Fallback to debugConfig if release keystore does not exist on CI
       val releaseKeystore = signingConfigs.getByName("release").storeFile
+      val debugKeystore = signingConfigs.getByName("debugConfig").storeFile
       if (releaseKeystore != null && releaseKeystore.exists()) {
         signingConfig = signingConfigs.getByName("release")
-      } else {
+      } else if (debugKeystore != null && debugKeystore.exists()) {
         signingConfig = signingConfigs.getByName("debugConfig")
       }
     }
     debug {
-      signingConfig = signingConfigs.getByName("debugConfig")
+      val debugKeystore = signingConfigs.getByName("debugConfig").storeFile
+      if (debugKeystore != null && debugKeystore.exists()) {
+        signingConfig = signingConfigs.getByName("debugConfig")
+      }
     }
   }
 
